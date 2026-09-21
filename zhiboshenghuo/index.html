@@ -1,0 +1,810 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="直播生活 - 探索真实生活直播的魅力，发现本地生活新方式。提供美食探店、户外探险、家居日常、才艺表演等多元直播内容，连接每一个精彩瞬间。">
+    <meta name="keywords" content="直播生活,实时直播,生活分享,直播探店,户外直播">
+    <title>直播生活 - 真实生活直播与探索指南</title>
+    <script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+    <style>
+        :root {
+            --primary-color: #ff4757;
+            --secondary-color: #2ed573;
+            --dark-bg: #1e272e;
+            --light-bg: #f1f2f6;
+            --text-main: #2f3542;
+            --text-light: #747d8c;
+            --card-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+            --transition: all 0.3s ease;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            background-color: var(--light-bg);
+            color: var(--text-main);
+            line-height: 1.6;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        /* Header */
+        header {
+            background-color: #fff;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .header-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+            height: 70px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: 800;
+            color: var(--primary-color);
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .logo span {
+            color: var(--text-main);
+        }
+
+        nav ul {
+            display: flex;
+            gap: 30px;
+        }
+
+        nav a {
+            font-weight: 500;
+            color: var(--text-main);
+            transition: var(--transition);
+        }
+
+        nav a:hover, nav a.active {
+            color: var(--primary-color);
+        }
+
+        .header-actions {
+            display: flex;
+            gap: 15px;
+        }
+
+        .btn {
+            padding: 8px 20px;
+            border-radius: 20px;
+            font-weight: 600;
+            font-size: 14px;
+            cursor: pointer;
+            transition: var(--transition);
+            border: none;
+        }
+
+        .btn-outline {
+            border: 1px solid var(--primary-color);
+            color: var(--primary-color);
+            background: transparent;
+        }
+
+        .btn-outline:hover {
+            background: var(--primary-color);
+            color: #fff;
+        }
+
+        .btn-primary {
+            background: var(--primary-color);
+            color: #fff;
+        }
+
+        .btn-primary:hover {
+            background: #e84118;
+            transform: translateY(-1px);
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, #1e272e 0%, #2f3542 100%);
+            color: #fff;
+            padding: 60px 20px;
+            text-align: center;
+        }
+
+        .hero-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .hero h1 {
+            font-size: 42px;
+            margin-bottom: 20px;
+            font-weight: 800;
+        }
+
+        .hero p {
+            font-size: 18px;
+            color: #d2dae2;
+            margin-bottom: 30px;
+        }
+
+        .search-bar {
+            display: flex;
+            max-width: 500px;
+            margin: 0 auto;
+            background: #fff;
+            border-radius: 30px;
+            padding: 5px;
+            box-shadow: 0 8px 24px rgba(0,0,0,0.2);
+        }
+
+        .search-bar input {
+            flex: 1;
+            border: none;
+            padding: 12px 20px;
+            border-radius: 25px;
+            outline: none;
+            font-size: 16px;
+        }
+
+        .search-bar button {
+            background: var(--primary-color);
+            color: #fff;
+            border: none;
+            width: 45px;
+            height: 45px;
+            border-radius: 50%;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: var(--transition);
+        }
+
+        .search-bar button:hover {
+            background: #e84118;
+        }
+
+        /* Main Layout */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 40px 20px;
+            flex: 1;
+            display: grid;
+            grid-template-columns: 3fr 1fr;
+            gap: 40px;
+        }
+
+        /* Live Channels Section */
+        .section-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 25px;
+        }
+
+        .section-title {
+            font-size: 24px;
+            font-weight: 700;
+            position: relative;
+            padding-left: 15px;
+        }
+
+        .section-title::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 5px;
+            height: 24px;
+            background: var(--primary-color);
+            border-radius: 2px;
+        }
+
+        .filter-tags {
+            display: flex;
+            gap: 10px;
+        }
+
+        .tag {
+            padding: 5px 15px;
+            border-radius: 15px;
+            font-size: 13px;
+            background: #eccc68;
+            color: #fff;
+            cursor: pointer;
+            transition: var(--transition);
+        }
+
+        .tag.active {
+            background: var(--primary-color);
+        }
+
+        .tag:nth-child(2) { background: #3742fa; }
+        .tag:nth-child(3) { background: #2ed573; }
+        .tag:nth-child(4) { background: #ff6b81; }
+
+        .live-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 25px;
+        }
+
+        .live-card {
+            background: #fff;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: var(--card-shadow);
+            transition: var(--transition);
+            position: relative;
+        }
+
+        .live-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.12);
+        }
+
+        .card-image {
+            position: relative;
+            height: 180px;
+            overflow: hidden;
+        }
+
+        .card-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+
+        .live-card:hover .card-image img {
+            transform: scale(1.05);
+        }
+
+        .live-badge {
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            background: rgba(255, 71, 87, 0.9);
+            color: #fff;
+            padding: 4px 10px;
+            border-radius: 4px;
+            font-size: 12px;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+
+        .live-badge::before {
+            content: '';
+            width: 8px;
+            height: 8px;
+            background: #fff;
+            border-radius: 50%;
+            animation: pulse 1.5s infinite;
+        }
+
+        @keyframes pulse {
+            0% { box-shadow: 0 0 0 0 rgba(255, 255, 255, 0.7); }
+            70% { box-shadow: 0 0 0 6px rgba(255, 255, 255, 0); }
+            100% { box-shadow: 0 0 0 0 rgba(255, 255, 255, 0); }
+        }
+
+        .viewer-count {
+            position: absolute;
+            bottom: 10px;
+            right: 10px;
+            background: rgba(0, 0, 0, 0.6);
+            color: #fff;
+            padding: 3px 8px;
+            border-radius: 4px;
+            font-size: 12px;
+            display: flex;
+            align-items: center;
+            gap: 4px;
+        }
+
+        .card-content {
+            padding: 15px;
+        }
+
+        .card-title {
+            font-size: 16px;
+            font-weight: 600;
+            margin-bottom: 8px;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+
+        .card-meta {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 13px;
+            color: var(--text-light);
+        }
+
+        .user-info {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .avatar {
+            width: 24px;
+            height: 24px;
+            border-radius: 50%;
+            object-fit: cover;
+        }
+
+        /* Sidebar */
+        aside {
+            display: flex;
+            flex-direction: column;
+            gap: 30px;
+        }
+
+        .widget {
+            background: #fff;
+            border-radius: 12px;
+            padding: 20px;
+            box-shadow: var(--card-shadow);
+        }
+
+        .widget-title {
+            font-size: 18px;
+            font-weight: 700;
+            margin-bottom: 15px;
+            padding-bottom: 10px;
+            border-bottom: 1px solid #eee;
+        }
+
+        .rank-list {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        .rank-item {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            cursor: pointer;
+            transition: var(--transition);
+        }
+
+        .rank-item:hover {
+            opacity: 0.8;
+        }
+
+        .rank-number {
+            width: 20px;
+            height: 20px;
+            background: #f1f2f6;
+            color: var(--text-light);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 12px;
+            font-weight: 700;
+        }
+
+        .rank-item:nth-child(1) .rank-number { background: #ff4757; color: #fff; }
+        .rank-item:nth-child(2) .rank-number { background: #ffa502; color: #fff; }
+        .rank-item:nth-child(3) .rank-number { background: #2ed573; color: #fff; }
+
+        .rank-info h4 {
+            font-size: 14px;
+            margin-bottom: 2px;
+        }
+
+        .rank-info p {
+            font-size: 12px;
+            color: var(--text-light);
+        }
+
+        .live-tip {
+            background: #fffbe6;
+            border-left: 4px solid #ffc107;
+            padding: 15px;
+            font-size: 13px;
+            color: #666;
+            line-height: 1.5;
+        }
+
+        .live-tip strong {
+            color: #d35400;
+        }
+
+        /* Footer */
+        footer {
+            background: var(--dark-bg);
+            color: #a4b0be;
+            padding: 50px 20px 20px;
+            margin-top: auto;
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .footer-col h3 {
+            color: #fff;
+            margin-bottom: 20px;
+            font-size: 18px;
+        }
+
+        .footer-col ul li {
+            margin-bottom: 10px;
+        }
+
+        .footer-col ul li a:hover {
+            color: #fff;
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            font-size: 14px;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .header-container {
+                height: auto;
+                padding: 15px 20px;
+                flex-wrap: wrap;
+            }
+
+            nav {
+                display: none; /* Mobile menu simplified for this demo */
+            }
+            
+            nav.mobile-active {
+                display: block;
+                width: 100%;
+                margin-top: 15px;
+            }
+
+            nav.mobile-active ul {
+                flex-direction: column;
+                gap: 15px;
+            }
+
+            .container {
+                grid-template-columns: 1fr;
+                padding: 20px;
+            }
+
+            .hero h1 {
+                font-size: 32px;
+            }
+
+            .filter-tags {
+                flex-wrap: wrap;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="header-container">
+            <a href="#" class="logo">
+                <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M23 7l-7 5 7 5V7z"></path><rect x="1" y="5" width="15" height="14" rx="2" ry="2"></rect></svg>
+                直播生活<span>Live</span>
+            </a>
+            <nav>
+                <ul>
+                    <li><a href="#" class="active">首页</a></li>
+                    <li><a href="#">分类浏览</a></li>
+                    <li><a href="#">热门榜单</a></li>
+                    <li><a href="#">直播社区</a></li>
+                    <li><a href="#">帮助中心</a></li>
+                </ul>
+            </nav>
+            <div class="header-actions">
+                <button class="btn btn-outline">登录</button>
+                <button class="btn btn-primary">开播</button>
+            </div>
+        </div>
+    </header>
+
+    <section class="hero">
+        <div class="hero-content">
+            <h1>发现真实世界的每一面</h1>
+            <p>从街头美食到户外探险，从家居改造到才艺表演，在这里连接每一个精彩瞬间。</p>
+            <div class="search-bar">
+                <input type="text" placeholder="搜索你想看的生活直播...">
+                <button type="button">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <div class="container">
+        <!-- Main Content: Live Channels -->
+        <main>
+            <div class="section-header">
+                <h2 class="section-title">正在直播</h2>
+                <div class="filter-tags">
+                    <span class="tag active">全部</span>
+                    <span class="tag">美食探店</span>
+                    <span class="tag">户外露营</span>
+                    <span class="tag">宠物日常</span>
+                </div>
+            </div>
+
+            <div class="live-grid">
+                <!-- Card 1 -->
+                <article class="live-card">
+                    <div class="card-image">
+                        <span class="live-badge">直播中</span>
+                        <span class="viewer-count">2.3万观看</span>
+                        <img src="https://picsum.photos/seed/food1/400/250" alt="深夜大排档">
+                    </div>
+                    <div class="card-content">
+                        <h3 class="card-title">深夜大排档：挑战100串羊肉串，最后谁买单？</h3>
+                        <div class="card-meta">
+                            <div class="user-info">
+                                <img src="https://picsum.photos/seed/user1/50/50" class="avatar" alt="User">
+                                <span>吃货小王</span>
+                            </div>
+                            <span>10分钟前</span>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Card 2 -->
+                <article class="live-card">
+                    <div class="card-image">
+                        <span class="live-badge">直播中</span>
+                        <span class="viewer-count">5800观看</span>
+                        <img src="https://picsum.photos/seed/nature1/400/250" alt="山间徒步">
+                    </div>
+                    <div class="card-content">
+                        <h3 class="card-title">周末山间徒步：寻找城市边缘的绝美日落</h3>
+                        <div class="card-meta">
+                            <div class="user-info">
+                                <img src="https://picsum.photos/seed/user2/50/50" class="avatar" alt="User">
+                                <span>行者阿强</span>
+                            </div>
+                            <span>正在直播</span>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Card 3 -->
+                <article class="live-card">
+                    <div class="card-image">
+                        <span class="live-badge">直播中</span>
+                        <span class="viewer-count">1.1万观看</span>
+                        <img src="https://picsum.photos/seed/cat1/400/250" alt="猫咪互动">
+                    </div>
+                    <div class="card-content">
+                        <h3 class="card-title">治愈系直播：撸猫一小时，缓解你的焦虑</h3>
+                        <div class="card-meta">
+                            <div class="user-info">
+                                <img src="https://picsum.photos/seed/user3/50/50" class="avatar" alt="User">
+                                <span>喵星人基地</span>
+                            </div>
+                            <span>15分钟前</span>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Card 4 -->
+                <article class="live-card">
+                    <div class="card-image">
+                        <span class="live-badge">直播中</span>
+                        <span class="viewer-count">890观看</span>
+                        <img src="https://picsum.photos/seed/tech1/400/250" alt="数码测评">
+                    </div>
+                    <div class="card-content">
+                        <h3 class="card-title">数码测评：新款智能手表开箱与续航实测</h3>
+                        <div class="card-meta">
+                            <div class="user-info">
+                                <img src="https://picsum.photos/seed/user4/50/50" class="avatar" alt="User">
+                                <span>科技前线</span>
+                            </div>
+                            <span>30分钟前</span>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Card 5 -->
+                <article class="live-card">
+                    <div class="card-image">
+                        <span class="live-badge">直播中</span>
+                        <span class="viewer-count">3.5万观看</span>
+                        <img src="https://picsum.photos/seed/art1/400/250" alt="绘画过程">
+                    </div>
+                    <div class="card-content">
+                        <h3 class="card-title">沉浸式绘画：用画笔描绘秋天的色彩</h3>
+                        <div class="card-meta">
+                            <div class="user-info">
+                                <img src="https://picsum.photos/seed/user5/50/50" class="avatar" alt="User">
+                                <span>画笔人生</span>
+                            </div>
+                            <span>正在直播</span>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Card 6 -->
+                <article class="live-card">
+                    <div class="card-image">
+                        <span class="live-badge">直播中</span>
+                        <span class="viewer-count">1200观看</span>
+                        <img src="https://picsum.photos/seed/cook1/400/250" alt="家庭烘焙">
+                    </div>
+                    <div class="card-content">
+                        <h3 class="card-title">家庭烘焙教学：零失败制作网红舒芙蕾</h3>
+                        <div class="card-meta">
+                            <div class="user-info">
+                                <img src="https://picsum.photos/seed/user6/50/50" class="avatar" alt="User">
+                                <span>甜心厨房</span>
+                            </div>
+                            <span>45分钟前</span>
+                        </div>
+                    </div>
+                </article>
+            </div>
+            
+            <div style="text-align: center; margin-top: 40px;">
+                <button class="btn btn-outline" style="width: 200px;">加载更多直播</button>
+            </div>
+        </main>
+
+        <!-- Sidebar -->
+        <aside>
+            <!-- Hot Streamers Widget -->
+            <div class="widget">
+                <h3 class="widget-title">热门主播</h3>
+                <div class="rank-list">
+                    <div class="rank-item">
+                        <div class="rank-number">1</div>
+                        <img src="https://picsum.photos/seed/u1/50/50" class="avatar" alt="User">
+                        <div class="rank-info">
+                            <h4>户外探险家</h4>
+                            <p>12.5万粉丝</p>
+                        </div>
+                    </div>
+                    <div class="rank-item">
+                        <div class="rank-number">2</div>
+                        <img src="https://picsum.photos/seed/u2/50/50" class="avatar" alt="User">
+                        <div class="rank-info">
+                            <h4>搞笑一家人</h4>
+                            <p>8.9万粉丝</p>
+                        </div>
+                    </div>
+                    <div class="rank-item">
+                        <div class="rank-number">3</div>
+                        <img src="https://picsum.photos/seed/u3/50/50" class="avatar" alt="User">
+                        <div class="rank-info">
+                            <h4>美妆日记</h4>
+                            <p>6.2万粉丝</p>
+                        </div>
+                    </div>
+                    <div class="rank-item">
+                        <div class="rank-number">4</div>
+                        <img src="https://picsum.photos/seed/u4/50/50" class="avatar" alt="User">
+                        <div class="rank-info">
+                            <h4>游戏解说</h4>
+                            <p>5.4万粉丝</p>
+                        </div>
+                    </div>
+                    <div class="rank-item">
+                        <div class="rank-number">5</div>
+                        <img src="https://picsum.photos/seed/u5/50/50" class="avatar" alt="User">
+                        <div class="rank-info">
+                            <h4>吉他弹唱</h4>
+                            <p>4.1万粉丝</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Tips Widget -->
+            <div class="widget">
+                <h3 class="widget-title">直播小贴士</h3>
+                <div class="live-tip">
+                    <p><strong>新手开播指南：</strong></p>
+                    <p style="margin-top: 8px;">选择一个稳定的网络环境，确保画面清晰流畅。提前测试好摄像头和麦克风，良好的画质是留住观众的第一步。</p>
+                </div>
+            </div>
+
+            <!-- App Download -->
+            <div class="widget" style="background: linear-gradient(135deg, #3742fa 0%, #5352ed 100%); color: #fff;">
+                <h3 class="widget-title" style="color: #fff; border-bottom-color: rgba(255,255,255,0.2);">下载直播生活APP</h3>
+                <p style="font-size: 13px; margin-bottom: 15px; opacity: 0.9;">随时随地，发现身边精彩，支持高清直播与即时互动。</p>
+                <div style="display: flex; gap: 10px;">
+                    <button class="btn" style="background: #fff; color: #3742fa; flex: 1;">iOS</button>
+                    <button class="btn" style="background: #fff; color: #3742fa; flex: 1;">Android</button>
+                </div>
+            </div>
+        </aside>
+    </div>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-col">
+                <h3>关于我们</h3>
+                <ul>
+                    <li><a href="#">平台简介</a></li>
+                    <li><a href="#">加入我们</a></li>
+                    <li><a href="#">联系方式</a></li>
+                    <li><a href="#">媒体报道</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h3>内容分类</h3>
+                <ul>
+                    <li><a href="#">娱乐直播</a></li>
+                    <li><a href="#">生活分享</a></li>
+                    <li><a href="#">户外探险</a></li>
+                    <li><a href="#">知识科普</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h3>帮助中心</h3>
+                <ul>
+                    <li><a href="#">新手指南</a></li>
+                    <li><a href="#">主播规则</a></li>
+                    <li><a href="#">用户协议</a></li>
+                    <li><a href="#">隐私政策</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h3>关注我们</h3>
+                <p style="font-size: 13px; margin-bottom: 10px;">获取最新直播动态与活动信息</p>
+                <div style="display: flex; gap: 10px;">
+                    <div style="width: 32px; height: 32px; background: rgba(255,255,255,0.1); border-radius: 50%;"></div>
+                    <div style="width: 32px; height: 32px; background: rgba(255,255,255,0.1); border-radius: 50%;"></div>
+                    <div style="width: 32px; height: 32px; background: rgba(255,255,255,0.1); border-radius: 50%;"></div>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2023 直播生活 LiveLife. All Rights Reserved. 本站内容仅供展示，不代表本站观点。</p>
+        </div>
+    </footer>
+
+</body>
+  </html>
