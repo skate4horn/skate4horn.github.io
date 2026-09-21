@@ -1,0 +1,766 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>家用洗车器 - 全方位清洁解决方案与选购指南</title>
+    <meta name="description" content="本站提供家用洗车器的详细选购指南、使用教程及常见问题解答。涵盖高压水枪、手持洗车机、气泵洗车等类型，助您轻松打造爱车光亮如新。">
+    <meta name="keywords" content="家用洗车器, 洗车机, 洗车枪, 洗车水枪, 汽车清洗工具, 手持洗车机">
+    <style>
+        :root {
+            --primary-color: #0056b3;
+            --secondary-color: #00a8e8;
+            --accent-color: #ffc107;
+            --text-dark: #333333;
+            --text-gray: #666666;
+            --bg-light: #f8f9fa;
+            --bg-white: #ffffff;
+            --border-color: #e0e0e0;
+            --container-width: 1200px;
+            --spacing-unit: 1rem;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif;
+            line-height: 1.6;
+            color: var(--text-dark);
+            background-color: var(--bg-light);
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+            transition: color 0.2s;
+        }
+
+        a:hover {
+            color: var(--primary-color);
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        /* Utility Classes */
+        .container {
+            max-width: var(--container-width);
+            margin: 0 auto;
+            padding: 0 var(--spacing-unit);
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 2.5rem;
+        }
+
+        .section-title h2 {
+            font-size: 2rem;
+            color: var(--text-dark);
+            margin-bottom: 0.5rem;
+        }
+
+        .section-title p {
+            color: var(--text-gray);
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 0.75rem 1.5rem;
+            border-radius: 4px;
+            font-weight: 500;
+            cursor: pointer;
+            text-align: center;
+        }
+
+        .btn-primary {
+            background-color: var(--primary-color);
+            color: white;
+        }
+
+        .btn-primary:hover {
+            background-color: #004494;
+        }
+
+        .btn-outline {
+            border: 2px solid var(--primary-color);
+            color: var(--primary-color);
+            background: transparent;
+        }
+
+        .btn-outline:hover {
+            background-color: var(--primary-color);
+            color: white;
+        }
+
+        /* Header */
+        header {
+            background-color: var(--bg-white);
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .nav-wrapper {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 70px;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--primary-color);
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+        }
+
+        .nav-links a {
+            font-weight: 500;
+            color: var(--text-dark);
+        }
+
+        .nav-links a.active {
+            color: var(--primary-color);
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+            color: white;
+            padding: 4rem 0;
+            text-align: center;
+        }
+
+        .hero h1 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            opacity: 0.9;
+            max-width: 600px;
+            margin: 0 auto 2rem;
+        }
+
+        .hero-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+        }
+
+        /* Features Section */
+        .features {
+            padding: 4rem 0;
+            background-color: var(--bg-white);
+        }
+
+        .feature-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+        }
+
+        .feature-card {
+            text-align: center;
+            padding: 2rem;
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.08);
+        }
+
+        .feature-icon {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            display: inline-block;
+        }
+
+        .feature-card h3 {
+            margin-bottom: 0.5rem;
+            color: var(--text-dark);
+        }
+
+        /* Product Showcase */
+        .showcase {
+            padding: 4rem 0;
+        }
+
+        .product-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .product-card {
+            background: var(--bg-white);
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+            display: flex;
+            flex-direction: column;
+        }
+
+        .product-image {
+            height: 200px;
+            background-color: #eee;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .product-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .product-badge {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            background-color: var(--accent-color);
+            color: var(--text-dark);
+            padding: 0.25rem 0.5rem;
+            border-radius: 4px;
+            font-size: 0.8rem;
+            font-weight: 600;
+        }
+
+        .product-info {
+            padding: 1.5rem;
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .product-title {
+            font-size: 1.2rem;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+        }
+
+        .product-desc {
+            color: var(--text-gray);
+            font-size: 0.9rem;
+            margin-bottom: 1rem;
+            flex-grow: 1;
+        }
+
+        .product-specs {
+            font-size: 0.85rem;
+            color: var(--text-gray);
+            margin-bottom: 1rem;
+            padding-bottom: 1rem;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .product-specs li {
+            margin-bottom: 0.25rem;
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .product-actions {
+            display: flex;
+            gap: 0.5rem;
+        }
+
+        /* Guide Section */
+        .guide {
+            padding: 4rem 0;
+            background-color: var(--bg-white);
+        }
+
+        .guide-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+        }
+
+        .guide-content h2 {
+            font-size: 2rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .guide-content p {
+            margin-bottom: 1rem;
+            color: var(--text-gray);
+        }
+
+        .guide-steps {
+            margin-top: 2rem;
+        }
+
+        .step-item {
+            display: flex;
+            gap: 1rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .step-number {
+            background-color: var(--primary-color);
+            color: white;
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 600;
+            flex-shrink: 0;
+        }
+
+        /* Comparison Table */
+        .comparison {
+            padding: 4rem 0;
+        }
+
+        .comparison-table-wrapper {
+            overflow-x: auto;
+            background: var(--bg-white);
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            min-width: 600px;
+        }
+
+        th, td {
+            padding: 1rem;
+            text-align: left;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        th {
+            background-color: var(--bg-light);
+            font-weight: 600;
+            color: var(--text-dark);
+        }
+
+        tr:last-child td {
+            border-bottom: none;
+        }
+
+        .check-icon {
+            color: #28a745;
+            font-weight: bold;
+        }
+
+        .cross-icon {
+            color: #dc3545;
+            font-weight: bold;
+        }
+
+        /* FAQ Section */
+        .faq {
+            padding: 4rem 0;
+            background-color: var(--bg-white);
+        }
+
+        .faq-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
+            gap: 2rem;
+        }
+
+        .faq-item {
+            border: 1px solid var(--border-color);
+            border-radius: 6px;
+            padding: 1.5rem;
+        }
+
+        .faq-item h3 {
+            font-size: 1.1rem;
+            margin-bottom: 0.5rem;
+            color: var(--primary-color);
+        }
+
+        .faq-item p {
+            font-size: 0.95rem;
+            color: var(--text-gray);
+        }
+
+        /* Footer */
+        footer {
+            background-color: #2c3e50;
+            color: #ecf0f1;
+            padding: 3rem 0;
+            margin-top: auto;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .footer-col h4 {
+            margin-bottom: 1rem;
+            font-size: 1.2rem;
+        }
+
+        .footer-col ul li {
+            margin-bottom: 0.5rem;
+        }
+
+        .footer-col ul li a {
+            color: #bdc3c7;
+        }
+
+        .footer-col ul li a:hover {
+            color: white;
+        }
+
+        .copyright {
+            text-align: center;
+            padding-top: 2rem;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            font-size: 0.9rem;
+            color: #bdc3c7;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2rem;
+            }
+            
+            .nav-links {
+                display: none;
+            }
+
+            .guide-container {
+                grid-template-columns: 1fr;
+            }
+
+            .faq-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="container nav-wrapper">
+            <a href="#" class="logo">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M12 2.69l5.66 5.66a8 8 0 1 1-11.31 0z"></path>
+                </svg>
+                洗车帮手
+            </a>
+            <nav class="nav-links">
+                <a href="#hero" class="active">首页</a>
+                <a href="#products">热门产品</a>
+                <a href="#guide">使用指南</a>
+                <a href="#comparison">类型对比</a>
+                <a href="#faq">常见问题</a>
+            </nav>
+            <a href="#products" class="btn btn-primary">立即选购</a>
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section id="hero" class="hero">
+            <div class="container">
+                <h1>家用洗车器，让洗车更轻松</h1>
+                <p>告别去洗车店的麻烦，拥有一款高性能的家用洗车器，随时随地保持爱车光亮。从高压水枪到手持洗车机，我们为您推荐最合适的清洁工具。</p>
+                <div class="hero-buttons">
+                    <a href="#products" class="btn" style="background-color: white; color: var(--primary-color);">浏览推荐</a>
+                    <a href="#guide" class="btn" style="background-color: transparent; border: 2px solid white;">查看教程</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Features Section -->
+        <section class="features">
+            <div class="container">
+                <div class="section-title">
+                    <h2>为什么选择家用洗车器？</h2>
+                    <p>专业的清洁工具能提升洗车效率，保护车漆不受损伤</p>
+                </div>
+                <div class="feature-grid">
+                    <article class="feature-card">
+                        <span class="feature-icon">⚡</span>
+                        <h3>强劲动力</h3>
+                        <p>大功率电机配合高压设计，轻松冲刷顽固污渍，深层清洁轮毂与缝隙。</p>
+                    </article>
+                    <article class="feature-card">
+                        <span class="feature-icon">💧</span>
+                        <h3>省水节能</h3>
+                        <p>先进的增压技术，相比传统水龙头节省大量用水，符合环保生活理念。</p>
+                    </article>
+                    <article class="feature-card">
+                        <span class="feature-icon">🔧</span>
+                        <h3>多功能一体</h3>
+                        <p>集冲洗、打泡、气泵功能于一体，一瓶水完成全车清洁，一机多用。</p>
+                    </article>
+                    <article class="feature-card">
+                        <span class="feature-icon">🛡️</span>
+                        <h3>安全耐用</h3>
+                        <p>采用耐高压软管与防滑手柄设计，配置多重安全保护，使用更安心。</p>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- Product Showcase -->
+        <section id="products" class="showcase">
+            <div class="container">
+                <div class="section-title">
+                    <h2>热门推荐产品</h2>
+                    <p>根据不同需求与预算，精选市面上口碑最佳的家用洗车器型号</p>
+                </div>
+                <div class="product-grid">
+                    <!-- Product 1 -->
+                    <article class="product-card">
+                        <div class="product-image">
+                            <img src="https://picsum.photos/seed/washer1/400/300" alt="高压电动洗车机">
+                            <span class="product-badge">热销</span>
+                        </div>
+                        <div class="product-info">
+                            <h3 class="product-title">高压电动洗车机（大功率版）</h3>
+                            <p class="product-desc">适用于家庭及小型商铺，内置大容量水箱，支持边加水边清洗，轻松应对日常洗车需求。</p>
+                            <ul class="product-specs">
+                                <li><span>额定功率</span> <span>1200W</span></li>
+                                <li><span>工作压力</span> <span>0.6 - 0.8 MPa</span></li>
+                                <li><span>水箱容量</span> <span>45L</span></li>
+                            </ul>
+                            <div class="product-actions">
+                                <a href="#" class="btn btn-primary" style="flex: 1;">查看详情</a>
+                                <a href="#" class="btn btn-outline">收藏</a>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Product 2 -->
+                    <article class="product-card">
+                        <div class="product-image">
+                            <img src="https://picsum.photos/seed/washer2/400/300" alt="手持迷你洗车机">
+                            <span class="product-badge">便携</span>
+                        </div>
+                        <div class="product-info">
+                            <h3 class="product-title">手持迷你洗车机</h3>
+                            <p class="product-desc">小巧轻便，不占空间，适合阳台存放。支持插电使用，亦可接通水龙头直接工作。</p>
+                            <ul class="product-specs">
+                                <li><span>额定功率</span> <span>600W</span></li>
+                                <li><span>工作压力</span> <span>0.4 - 0.5 MPa</span></li>
+                                <li><span>电源</span> <span>220V 家用插座</span></li>
+                            </ul>
+                            <div class="product-actions">
+                                <a href="#" class="btn btn-primary" style="flex: 1;">查看详情</a>
+                                <a href="#" class="btn btn-outline">收藏</a>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Product 3 -->
+                    <article class="product-card">
+                        <div class="product-image">
+                            <img src="https://picsum.photos/seed/washer3/400/300" alt="气泵洗车套装">
+                            <span class="product-badge">特色</span>
+                        </div>
+                        <div class="product-info">
+                            <h3 class="product-title">气泵洗车套装</h3>
+                            <p class="product-desc">利用压缩空气强力吹干车身水珠，配合泡沫清洗，快速去除灰尘，保护车漆免受水痕影响。</p>
+                            <ul class="product-specs">
+                                <li><span>气泵排气量</span> <span>35L/min</span></li>
+                                <li><span>适用车型</span> <span>轿车/SUV</span></li>
+                                <li><span>附加功能</span> <span>轮胎充气/吹窗</span></li>
+                            </ul>
+                            <div class="product-actions">
+                                <a href="#" class="btn btn-primary" style="flex: 1;">查看详情</a>
+                                <a href="#" class="btn btn-outline">收藏</a>
+                            </div>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- Guide Section -->
+        <section id="guide" class="guide">
+            <div class="container">
+                <div class="guide-container">
+                    <div class="guide-content">
+                        <h2>如何正确使用家用洗车器？</h2>
+                        <p>使用洗车器不仅需要合适的工具，正确的流程同样重要。不当的操作可能会损坏车漆或机器。</p>
+                        <p>首先，在清洗前应使用高压水枪对车身进行初步冲洗，去除表面的大颗粒沙土，避免在擦洗过程中产生划痕。</p>
+                        <div class="guide-steps">
+                            <div class="step-item">
+                                <span class="step-number">1</span>
+                                <div>
+                                    <h4>清洗车身</h4>
+                                    <p>使用中性洗车液，配合海绵或洗车刷，由上至下轻轻擦拭。</p>
+                                </div>
+                            </div>
+                            <div class="step-item">
+                                <span class="step-number">2</span>
+                                <div>
+                                    <h4>冲洗泡沫</h4>
+                                    <p>清洗完毕后，再次使用高压水枪冲洗车身，确保无残留洗涤剂。</p>
+                                </div>
+                            </div>
+                            <div class="step-item">
+                                <span class="step-number">3</span>
+                                <div>
+                                    <h4>擦干车身</h4>
+                                    <p>使用超细纤维毛巾擦干，或使用气泵洗车器吹干水分。</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="guide-image">
+                        <img src="https://picsum.photos/seed/carwash/600/400" alt="洗车流程示意图" style="border-radius: 8px; box-shadow: 0 4px 12px rgba(0,0,0,0.1);">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Comparison Section -->
+        <section id="comparison" class="comparison">
+            <div class="container">
+                <div class="section-title">
+                    <h2>常见类型对比</h2>
+                    <p>了解不同类型洗车器的优缺点，选择最适合您的方案</p>
+                </div>
+                <div class="comparison-table-wrapper">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>特性</th>
+                                <th>高压电动洗车机</th>
+                                <th>手持洗车机</th>
+                                <th>气泵洗车器</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><strong>动力来源</strong></td>
+                                <td>220V/12V 电机驱动</td>
+                                <td>220V 插电式</td>
+                                <td>家用 220V 电动气泵</td>
+                            </tr>
+                            <tr>
+                                <td><strong>清洗效果</strong></td>
+                                <td>★★★★★ 强劲，适合重度污渍</td>
+                                <td>★★★★☆ 中等，适合日常清洁</td>
+                                <td>★★★☆☆ 辅助清洁，主要用于吹水</td>
+                            </tr>
+                            <tr>
+                                <td><strong>移动便捷性</strong></td>
+                                <td>★★☆☆☆ 机器较重，需固定电源</td>
+                                <td>★★★★☆ 灵活，可移动</td>
+                                <td>★★★★★ 非常轻便，随处可用</td>
+                            </tr>
+                            <tr>
+                                <td><strong>价格区间</strong></td>
+                                <td>¥300 - ¥800</td>
+                                <td>¥100 - ¥300</td>
+                                <td>¥100 - ¥200</td>
+                            </tr>
+                            <tr>
+                                <td><strong>推荐人群</strong></td>
+                                <td>追求极致清洁效果的家庭</td>
+                                <td>空间有限，追求性价比的用户</td>
+                                <td>经常出差，需要便携工具的车主</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </section>
+
+        <!-- FAQ Section -->
+        <section id="faq" class="faq">
+            <div class="container">
+                <div class="section-title">
+                    <h2>常见问题解答</h2>
+                </div>
+                <div class="faq-grid">
+                    <div class="faq-item">
+                        <h3>家用洗车机可以用自来水直接洗吗？</h3>
+                        <p>可以，但强烈建议先安装过滤网或使用经过沉淀的水源。如果水中杂质较多，容易堵塞喷嘴，影响使用寿命。</p>
+                    </div>
+                    <div class="faq-item">
+                        <h3>洗车器需要经常维护吗？</h3>
+                        <p>需要。每次使用后应排空水箱内的残留水，并清理进水口的过滤网。定期检查软管和接头是否有老化或漏水现象。</p>
+                    </div>
+                    <div class="faq-item">
+                        <h3>高压洗车机洗车伤车漆吗？</h3>
+                        <p>只要正确使用，不会伤车漆。建议使用泡沫枪打出丰富泡沫后再进行擦洗，并保持适当距离，避免直接用高压水枪直射车漆。</p>
+                    </div>
+                    <div class="faq-item">
+                        <h3>气泵洗车器能完全代替水洗吗？</h3>
+                        <p>不能。气泵洗车器主要功能是吹干水分和去除浮尘，无法去除油污和泥沙，必须配合水洗和清洁剂使用。</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <h4>关于我们</h4>
+                    <p style="color: #bdc3c7; font-size: 0.9rem;">我们致力于为车主提供专业的洗车工具选购指南与使用建议，帮助您以更低成本、更高效率维护爱车。</p>
+                </div>
+                <div class="footer-col">
+                    <h4>产品分类</h4>
+                    <ul>
+                        <li><a href="#">高压电动洗车机</a></li>
+                        <li><a href="#">手持洗车机</a></li>
+                        <li><a href="#">气泵洗车套装</a></li>
+                        <li><a href="#">洗车配件</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>使用帮助</h4>
+                    <ul>
+                        <li><a href="#">洗车教程</a></li>
+                        <li><a href="#">常见故障排除</a></li>
+                        <li><a href="#">配件选购指南</a></li>
+                        <li><a href="#">联系我们</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="copyright">
+                &copy; 2023 洗车帮手. 保留所有权利. 本网站内容仅供参考，请以实际产品说明为准。
+            </div>
+        </div>
+    </footer>
+
+    <script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+</body>
+          </html>
