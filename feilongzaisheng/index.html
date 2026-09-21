@@ -1,0 +1,590 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="飞龙再生国语 - 沉浸式体验飞龙再生国语版，高清画质与流畅语速完美融合。提供飞龙再生国语全集观看、剧情解析、角色介绍及观看指南，满足您对国语配音的观看需求。">
+    <meta name="keywords" content="飞龙再生国语,飞龙再生,国语版,动漫,在线观看,国语配音">
+    <title>飞龙再生国语-全集国语配音观看与剧情解析指南</title>
+    <script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+    <style>
+        :root {
+            --primary-color: #0066cc;
+            --accent-color: #ff9900;
+            --bg-dark: #121212;
+            --bg-card: #1e1e1e;
+            --text-main: #ffffff;
+            --text-secondary: #aaaaaa;
+            --border-radius: 8px;
+            --spacing-unit: 16px;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            background-color: var(--bg-dark);
+            color: var(--text-main);
+            line-height: 1.6;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+            transition: color 0.2s;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 var(--spacing-unit);
+        }
+
+        /* Header */
+        header {
+            background-color: rgba(18, 18, 18, 0.95);
+            border-bottom: 1px solid #333;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            padding: 15px 0;
+            backdrop-filter: blur(10px);
+        }
+
+        .header-inner {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: var(--text-main);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .logo span {
+            color: var(--primary-color);
+        }
+
+        nav ul {
+            display: flex;
+            gap: 20px;
+        }
+
+        nav a:hover {
+            color: var(--primary-color);
+        }
+
+        .search-box {
+            display: none;
+        }
+
+        @media (min-width: 768px) {
+            .search-box {
+                display: block;
+            }
+            .search-box input {
+                background: #333;
+                border: none;
+                padding: 8px 12px;
+                border-radius: 4px;
+                color: #fff;
+                width: 200px;
+            }
+        }
+
+        /* Hero Section */
+        .hero {
+            position: relative;
+            height: 400px;
+            background: linear-gradient(to bottom, rgba(0,0,0,0.3), var(--bg-dark)), url('https://picsum.photos/seed/dragonhero/1920/600.jpg') center/cover no-repeat;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 20px;
+        }
+
+        .hero-content h1 {
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+            text-shadow: 0 2px 4px rgba(0,0,0,0.8);
+        }
+
+        .hero-content p {
+            font-size: 1.1rem;
+            color: #ddd;
+            margin-bottom: 20px;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 10px 24px;
+            background-color: var(--primary-color);
+            color: white;
+            border-radius: 4px;
+            font-weight: bold;
+            transition: background 0.3s;
+        }
+
+        .btn:hover {
+            background-color: #0052a3;
+        }
+
+        .btn-outline {
+            background-color: transparent;
+            border: 2px solid var(--primary-color);
+            margin-left: 10px;
+        }
+
+        .btn-outline:hover {
+            background-color: rgba(0, 102, 204, 0.1);
+        }
+
+        /* Main Layout */
+        .main-layout {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 30px;
+            margin-top: 30px;
+            margin-bottom: 50px;
+        }
+
+        @media (min-width: 992px) {
+            .main-layout {
+                grid-template-columns: 3fr 1fr;
+            }
+        }
+
+        /* Section Titles */
+        .section-title {
+            font-size: 1.4rem;
+            border-left: 4px solid var(--accent-color);
+            padding-left: 12px;
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .section-title a {
+            font-size: 0.9rem;
+            color: var(--text-secondary);
+        }
+
+        /* Episode List */
+        .episode-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+            gap: 15px;
+        }
+
+        .episode-card {
+            background-color: var(--bg-card);
+            border-radius: var(--border-radius);
+            overflow: hidden;
+            transition: transform 0.2s, box-shadow 0.2s;
+            cursor: pointer;
+            border: 1px solid #333;
+        }
+
+        .episode-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.5);
+            border-color: var(--primary-color);
+        }
+
+        .episode-thumb {
+            width: 100%;
+            height: 100px;
+            object-fit: cover;
+            background-color: #333;
+        }
+
+        .episode-info {
+            padding: 10px;
+        }
+
+        .episode-title {
+            font-size: 0.95rem;
+            font-weight: bold;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+
+        .episode-meta {
+            font-size: 0.75rem;
+            color: var(--text-secondary);
+            margin-top: 4px;
+        }
+
+        /* Sidebar */
+        .sidebar-widget {
+            background-color: var(--bg-card);
+            padding: 20px;
+            border-radius: var(--border-radius);
+            margin-bottom: 30px;
+            border: 1px solid #333;
+        }
+
+        .info-row {
+            display: flex;
+            margin-bottom: 10px;
+            border-bottom: 1px solid #333;
+            padding-bottom: 10px;
+        }
+
+        .info-row:last-child {
+            border-bottom: none;
+        }
+
+        .info-label {
+            width: 70px;
+            font-weight: bold;
+            color: var(--text-secondary);
+        }
+
+        .info-value {
+            flex: 1;
+            color: var(--text-main);
+        }
+
+        .tag-cloud {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+        }
+
+        .tag {
+            background-color: #333;
+            padding: 4px 10px;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            color: #ccc;
+        }
+
+        .tag:hover {
+            background-color: var(--primary-color);
+            color: white;
+        }
+
+        /* Guide Section */
+        .guide-section {
+            background-color: var(--bg-card);
+            padding: 30px;
+            border-radius: var(--border-radius);
+            margin-bottom: 40px;
+            border: 1px solid #333;
+        }
+
+        .guide-content h3 {
+            color: var(--accent-color);
+            margin-bottom: 15px;
+            margin-top: 20px;
+        }
+
+        .guide-content p {
+            margin-bottom: 15px;
+            color: #ddd;
+        }
+
+        .guide-content ul {
+            list-style: disc;
+            padding-left: 20px;
+            margin-bottom: 15px;
+        }
+
+        .guide-content li {
+            margin-bottom: 8px;
+            color: #ddd;
+        }
+
+        /* Footer */
+        footer {
+            background-color: #0a0a0a;
+            padding: 40px 0;
+            margin-top: 60px;
+            border-top: 1px solid #333;
+            text-align: center;
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+        }
+
+        .footer-links {
+            margin-bottom: 20px;
+        }
+
+        .footer-links a {
+            margin: 0 10px;
+            color: var(--text-secondary);
+        }
+
+        .footer-links a:hover {
+            color: var(--primary-color);
+        }
+
+        /* Utility */
+        .badge {
+            display: inline-block;
+            padding: 2px 6px;
+            border-radius: 4px;
+            font-size: 0.7rem;
+            margin-left: 5px;
+        }
+        .badge-new { background-color: #28a745; color: white; }
+        .badge-hot { background-color: #dc3545; color: white; }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero-content h1 { font-size: 1.8rem; }
+            .episode-list { grid-template-columns: repeat(3, 1fr); }
+            .episode-card { height: 180px; }
+            .episode-thumb { height: 120px; }
+        }
+        @media (max-width: 480px) {
+            .episode-list { grid-template-columns: repeat(2, 1fr); }
+            .episode-card { height: 200px; }
+            .episode-thumb { height: 140px; }
+            nav { display: none; } /* Simplified for mobile demo */
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="container header-inner">
+            <a href="#" class="logo">飞龙<span>再生</span></a>
+            <nav>
+                <ul>
+                    <li><a href="#">首页</a></li>
+                    <li><a href="#">国语版</a></li>
+                    <li><a href="#">更新列表</a></li>
+                    <li><a href="#">角色图鉴</a></li>
+                    <li><a href="#">观看指南</a></li>
+                </ul>
+            </nav>
+            <div class="search-box">
+                <input type="text" placeholder="搜索剧集...">
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section class="hero">
+            <div class="hero-content">
+                <h1>飞龙再生国语版</h1>
+                <p>重温经典，沉浸式体验全国语配音版本。高清画质，情感饱满，为您呈现最地道的中文演绎。</p>
+                <div>
+                    <a href="#episodes" class="btn">立即观看</a>
+                    <a href="#guide" class="btn btn-outline">观看指南</a>
+                </div>
+            </div>
+        </section>
+
+        <div class="container main-layout">
+            <!-- Left Content -->
+            <div class="content-area">
+                
+                <!-- Intro Section -->
+                <section class="guide-section" id="guide">
+                    <div class="section-title">关于飞龙再生国语</div>
+                    <div class="guide-content">
+                        <p><strong>飞龙再生</strong>是一部备受瞩目的动画作品，其国语版本通过专业的配音团队，将原作中角色的情感与剧情张力完美转化为中文表达。对于习惯中文配音的观众来说，这是体验故事的最佳方式之一。</p>
+                        <h3>国语版特色</h3>
+                        <ul>
+                            <li><strong>专业配音：</strong> 选用资深声优，还原角色性格。</li>
+                            <li><strong>流畅台词：</strong> 经过后期打磨，台词自然流畅。</li>
+                            <li><strong>情感共鸣：</strong> 更符合国内观众的听感习惯。</li>
+                        </ul>
+                        <h3>观看注意事项</h3>
+                        <p>请通过本站提供的正版渠道观看，支持创作者。本站提供的是国语配音资源整理与观看服务，请勿用于商业用途。</p>
+                    </div>
+                </section>
+
+                <!-- Episodes Section -->
+                <section id="episodes">
+                    <div class="section-title">
+                        <span>最新更新</span>
+                        <a href="#">查看全部 ></a>
+                    </div>
+                    <div class="episode-list">
+                        <!-- Episode 1 -->
+                        <article class="episode-card">
+                            <img src="https://picsum.photos/seed/dragon1/300/200.jpg" alt="飞龙再生国语 第1集" class="episode-thumb">
+                            <div class="episode-info">
+                                <div class="episode-title">第1集：觉醒时刻</div>
+                                <div class="episode-meta">更新于 2天前 | 国语配音</div>
+                            </div>
+                        </article>
+                        <!-- Episode 2 -->
+                        <article class="episode-card">
+                            <img src="https://picsum.photos/seed/dragon2/300/200.jpg" alt="飞龙再生国语 第2集" class="episode-thumb">
+                            <div class="episode-info">
+                                <div class="episode-title">第2集：命运的转折</div>
+                                <div class="episode-meta">更新于 5天前 | 国语配音</div>
+                            </div>
+                        </article>
+                        <!-- Episode 3 -->
+                        <article class="episode-card">
+                            <img src="https://picsum.photos/seed/dragon3/300/200.jpg" alt="飞龙再生国语 第3集" class="episode-thumb">
+                            <div class="episode-info">
+                                <div class="episode-title">第3集：伙伴集结</div>
+                                <div class="episode-meta">更新于 1周前 | 国语配音</div>
+                            </div>
+                        </article>
+                        <!-- Episode 4 -->
+                        <article class="episode-card">
+                            <img src="https://picsum.photos/seed/dragon4/300/200.jpg" alt="飞龙再生国语 第4集" class="episode-thumb">
+                            <div class="episode-info">
+                                <div class="episode-title">第4集：挑战强敌</div>
+                                <div class="episode-meta">更新于 1周前 | 国语配音</div>
+                            </div>
+                        </article>
+                        <!-- Episode 5 -->
+                        <article class="episode-card">
+                            <img src="https://picsum.photos/seed/dragon5/300/200.jpg" alt="飞龙再生国语 第5集" class="episode-thumb">
+                            <div class="episode-info">
+                                <div class="episode-title">第5集：飞龙再现</div>
+                                <div class="episode-meta">更新于 2周前 | 国语配音</div>
+                            </div>
+                        </article>
+                        <!-- Episode 6 -->
+                        <article class="episode-card">
+                            <img src="https://picsum.photos/seed/dragon6/300/200.jpg" alt="飞龙再生国语 第6集" class="episode-thumb">
+                            <div class="episode-info">
+                                <div class="episode-title">第6集：新的征程</div>
+                                <div class="episode-meta">更新于 2周前 | 国语配音</div>
+                            </div>
+                        </article>
+                    </div>
+                </section>
+
+                <!-- More Episodes Placeholder -->
+                <section id="all-episodes">
+                    <div class="section-title">
+                        <span>全集列表</span>
+                        <a href="#">加载更多...</a>
+                    </div>
+                    <div class="episode-list">
+                         <article class="episode-card">
+                            <img src="https://picsum.photos/seed/dragon7/300/200.jpg" alt="飞龙再生国语 第7集" class="episode-thumb">
+                            <div class="episode-info">
+                                <div class="episode-title">第7集：深林迷踪</div>
+                                <div class="episode-meta">国语版</div>
+                            </div>
+                        </article>
+                        <article class="episode-card">
+                            <img src="https://picsum.photos/seed/dragon8/300/200.jpg" alt="飞龙再生国语 第8集" class="episode-thumb">
+                            <div class="episode-info">
+                                <div class="episode-title">第8集：古城探秘</div>
+                                <div class="episode-meta">国语版</div>
+                            </div>
+                        </article>
+                         <article class="episode-card">
+                            <img src="https://picsum.photos/seed/dragon9/300/200.jpg" alt="飞龙再生国语 第9集" class="episode-thumb">
+                            <div class="episode-info">
+                                <div class="episode-title">第9集：暗影降临</div>
+                                <div class="episode-meta">国语版</div>
+                            </div>
+                        </article>
+                         <article class="episode-card">
+                            <img src="https://picsum.photos/seed/dragon10/300/200.jpg" alt="飞龙再生国语 第10集" class="episode-thumb">
+                            <div class="episode-info">
+                                <div class="episode-title">第10集：终极一战</div>
+                                <div class="episode-meta">国语版</div>
+                            </div>
+                        </article>
+                    </div>
+                </section>
+
+            </div>
+
+            <!-- Sidebar -->
+            <aside class="sidebar">
+                <!-- Info Widget -->
+                <div class="sidebar-widget">
+                    <div class="section-title">作品档案</div>
+                    <div class="info-row">
+                        <span class="info-label">原名：</span>
+                        <span class="info-value">飞龙再生</span>
+                    </div>
+                    <div class="info-row">
+                        <span class="info-label">类型：</span>
+                        <span class="info-value">热血 / 冒险 / 动作</span>
+                    </div>
+                    <div class="info-row">
+                        <span class="info-label">配音：</span>
+                        <span class="info-value">国语版 (专业配音)</span>
+                    </div>
+                    <div class="info-row">
+                        <span class="info-label">状态：</span>
+                        <span class="info-value" style="color: #28a745;">连载中</span>
+                    </div>
+                </div>
+
+                <!-- Tags Widget -->
+                <div class="sidebar-widget">
+                    <div class="section-title">热门标签</div>
+                    <div class="tag-cloud">
+                        <a href="#" class="tag">飞龙再生国语</a>
+                        <a href="#" class="tag">在线观看</a>
+                        <a href="#" class="tag">国语配音</a>
+                        <a href="#" class="tag">动漫推荐</a>
+                        <a href="#" class="tag">高清下载</a>
+                        <a href="#" class="tag">剧情解析</a>
+                        <a href="#" class="tag">角色介绍</a>
+                    </div>
+                </div>
+
+                <!-- Ad Placeholder -->
+                <div class="sidebar-widget" style="text-align: center; padding: 40px 20px; background: #2a2a2a;">
+                    <p style="color: #666; font-size: 0.8rem;">广告位</p>
+                </div>
+
+                <!-- Related Info -->
+                <div class="sidebar-widget">
+                    <div class="section-title">观看指南</div>
+                    <p style="font-size: 0.9rem; color: #ccc; margin-bottom: 10px;">
+                        如何选择播放源？建议优先选择“国语版”标签进行筛选。遇到播放卡顿请刷新或切换至备用线路。
+                    </p>
+                    <a href="#" style="font-size: 0.9rem; color: var(--primary-color);">查看帮助文档 &rarr;</a>
+                </div>
+            </aside>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-links">
+                <a href="#">关于我们</a>
+                <a href="#">免责声明</a>
+                <a href="#">版权声明</a>
+                <a href="#">联系合作</a>
+                <a href="#">RSS订阅</a>
+            </div>
+            <p>&copy; 2023 飞龙再生国语观看指南. All Rights Reserved.</p>
+            <p style="font-size: 0.8rem; margin-top: 10px; color: #555;">
+                本站资源来自网络，仅供学习交流使用，请于下载后24小时内删除。
+            </p>
+        </div>
+    </footer>
+
+</body>
+</html>
