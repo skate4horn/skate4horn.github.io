@@ -1,0 +1,615 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>久久久久亚洲-亚洲影视作品精选与在线观看平台</title>
+    <meta name="description" content="久久久久亚洲为您提供最新的亚洲影视作品资讯、高清在线观看资源及热门剧集推荐，涵盖日韩、国产及东南亚地区的优质内容。">
+    <meta name="keywords" content="久久久久亚洲,亚洲影视,在线观看,剧集推荐,高清资源">
+    <script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+    <style>
+        :root {
+            --primary-color: #e50914;
+            --secondary-color: #221f1f;
+            --bg-color: #141414;
+            --card-bg: #1f1f1f;
+            --text-color: #ffffff;
+            --text-muted: #b3b3b3;
+            --spacing-unit: 16px;
+            --container-width: 1200px;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+            transition: color 0.2s;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        /* Utility */
+        .container {
+            max-width: var(--container-width);
+            margin: 0 auto;
+            padding: 0 var(--spacing-unit);
+        }
+
+        .flex {
+            display: flex;
+        }
+
+        .flex-col {
+            flex-direction: column;
+        }
+
+        .items-center {
+            align-items: center;
+        }
+
+        .justify-between {
+            justify-content: space-between;
+        }
+
+        .grid {
+            display: grid;
+        }
+
+        /* Header */
+        header {
+            background-color: rgba(20, 20, 20, 0.95);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            border-bottom: 1px solid #333;
+            padding: 12px 0;
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: bold;
+            color: var(--primary-color);
+            letter-spacing: 1px;
+        }
+
+        .nav-menu {
+            display: flex;
+            gap: 24px;
+        }
+
+        .nav-menu a {
+            font-size: 14px;
+            color: var(--text-muted);
+            font-weight: 500;
+        }
+
+        .nav-menu a:hover, .nav-menu a.active {
+            color: var(--text-color);
+        }
+
+        .search-bar {
+            display: flex;
+            background: #333;
+            border-radius: 4px;
+            overflow: hidden;
+        }
+
+        .search-bar input {
+            background: transparent;
+            border: none;
+            padding: 8px 12px;
+            color: white;
+            outline: none;
+            width: 200px;
+        }
+
+        .search-bar button {
+            background: transparent;
+            border: none;
+            color: var(--text-muted);
+            padding: 0 12px;
+            cursor: pointer;
+        }
+
+        /* Hero Section */
+        .hero {
+            position: relative;
+            height: 500px;
+            background-image: linear-gradient(to top, rgba(0,0,0,0.9), transparent), url('https://picsum.photos/seed/asianhero/1920/600');
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            align-items: center;
+        }
+
+        .hero-content {
+            max-width: 600px;
+        }
+
+        .hero-tag {
+            background-color: var(--primary-color);
+            color: white;
+            padding: 4px 8px;
+            font-size: 12px;
+            font-weight: bold;
+            text-transform: uppercase;
+            display: inline-block;
+            margin-bottom: 16px;
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            margin-bottom: 16px;
+            line-height: 1.2;
+        }
+
+        .hero p {
+            color: var(--text-muted);
+            margin-bottom: 24px;
+            font-size: 1.1rem;
+        }
+
+        .btn {
+            display: inline-block;
+            background-color: var(--primary-color);
+            color: white;
+            padding: 12px 24px;
+            border-radius: 4px;
+            font-weight: bold;
+            cursor: pointer;
+            border: none;
+        }
+
+        .btn:hover {
+            background-color: #f40612;
+        }
+
+        .btn-outline {
+            background-color: transparent;
+            border: 1px solid var(--text-muted);
+            margin-left: 10px;
+        }
+
+        .btn-outline:hover {
+            border-color: white;
+            color: white;
+        }
+
+        /* Categories */
+        .section-title {
+            font-size: 20px;
+            margin: 40px 0 20px;
+            padding-left: 8px;
+            border-left: 4px solid var(--primary-color);
+        }
+
+        .category-grid {
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            gap: 20px;
+        }
+
+        .category-card {
+            background-color: var(--card-bg);
+            padding: 20px;
+            text-align: center;
+            border-radius: 8px;
+            transition: transform 0.2s, background-color 0.2s;
+            cursor: pointer;
+        }
+
+        .category-card:hover {
+            transform: translateY(-5px);
+            background-color: #2a2a2a;
+        }
+
+        .category-icon {
+            font-size: 32px;
+            margin-bottom: 12px;
+        }
+
+        .category-name {
+            font-weight: 600;
+        }
+
+        /* Content Grid */
+        .content-grid {
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 24px;
+        }
+
+        .content-card {
+            background-color: var(--card-bg);
+            border-radius: 8px;
+            overflow: hidden;
+            transition: box-shadow 0.2s;
+        }
+
+        .content-card:hover {
+            box-shadow: 0 10px 20px rgba(0,0,0,0.5);
+        }
+
+        .card-image {
+            position: relative;
+            width: 100%;
+            padding-top: 140%; /* Aspect ratio */
+            background-color: #000;
+        }
+
+        .card-image img {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .card-rating {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            background-color: rgba(0,0,0,0.8);
+            color: #ffd700;
+            padding: 2px 6px;
+            border-radius: 4px;
+            font-size: 12px;
+            font-weight: bold;
+            display: flex;
+            align-items: center;
+            gap: 4px;
+        }
+
+        .card-info {
+            padding: 16px;
+        }
+
+        .card-title {
+            font-size: 16px;
+            font-weight: bold;
+            margin-bottom: 8px;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+
+        .card-meta {
+            display: flex;
+            justify-content: space-between;
+            font-size: 12px;
+            color: var(--text-muted);
+        }
+
+        .card-tags span {
+            background-color: #333;
+            padding: 2px 6px;
+            border-radius: 2px;
+            margin-right: 4px;
+            font-size: 10px;
+        }
+
+        /* Features */
+        .features {
+            background-color: #000;
+            padding: 60px 0;
+            margin-top: 60px;
+        }
+
+        .feature-grid {
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+        }
+
+        .feature-item h3 {
+            margin-bottom: 10px;
+            color: white;
+        }
+
+        .feature-item p {
+            color: var(--text-muted);
+            font-size: 14px;
+        }
+
+        /* Footer */
+        footer {
+            background-color: var(--secondary-color);
+            padding: 40px 0 20px;
+            margin-top: 60px;
+            border-top: 1px solid #333;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .footer-col h4 {
+            color: white;
+            margin-bottom: 20px;
+            font-size: 16px;
+        }
+
+        .footer-col ul li {
+            margin-bottom: 10px;
+        }
+
+        .footer-col ul li a {
+            color: var(--text-muted);
+            font-size: 14px;
+        }
+
+        .footer-col ul li a:hover {
+            color: var(--primary-color);
+        }
+
+        .copyright {
+            text-align: center;
+            padding-top: 20px;
+            border-top: 1px solid #333;
+            color: #666;
+            font-size: 12px;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .nav-menu {
+                display: none;
+            }
+            .hero {
+                height: 400px;
+            }
+            .hero h1 {
+                font-size: 2rem;
+            }
+            .search-bar {
+                display: none;
+            }
+            .content-grid {
+                grid-template-columns: 1fr;
+            }
+            .category-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="container flex justify-between items-center">
+            <a href="#" class="logo">久久久久亚洲</a>
+            <nav class="nav-menu">
+                <a href="#" class="active">首页</a>
+                <a href="#">日韩剧集</a>
+                <a href="#">国产影视</a>
+                <a href="#">动漫番剧</a>
+                <a href="#">综艺娱乐</a>
+                <a href="#">会员专区</a>
+            </nav>
+            <div class="search-bar">
+                <input type="text" placeholder="搜索片名、演员...">
+                <button>🔍</button>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section class="hero">
+            <div class="container">
+                <div class="hero-content">
+                    <span class="hero-tag">本周热门推荐</span>
+                    <h1>探索亚洲文化的无限魅力</h1>
+                    <p>汇聚日韩、东南亚及中国大陆的优质影视资源。高清画质，流畅播放，为您提供沉浸式的观影体验。</p>
+                    <div class="flex">
+                        <button class="btn">立即观看</button>
+                        <button class="btn btn-outline">更多详情</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Categories -->
+        <section class="container">
+            <h2 class="section-title">内容分类</h2>
+            <div class="grid category-grid">
+                <div class="category-card">
+                    <div class="category-icon">🎬</div>
+                    <div class="category-name">电视剧</div>
+                </div>
+                <div class="category-card">
+                    <div class="category-icon">🎥</div>
+                    <div class="category-name">电影</div>
+                </div>
+                <div class="category-card">
+                    <div class="category-icon">📺</div>
+                    <div class="category-name">综艺</div>
+                </div>
+                <div class="category-card">
+                    <div class="category-icon">🎭</div>
+                    <div class="category-name">动漫</div>
+                </div>
+                <div class="category-card">
+                    <div class="category-icon">🎵</div>
+                    <div class="category-name">MV</div>
+                </div>
+                <div class="category-card">
+                    <div class="category-icon">🇯🇵</div>
+                    <div class="category-name">日剧</div>
+                </div>
+                <div class="category-card">
+                    <div class="category-icon">🇰🇷</div>
+                    <div class="category-name">韩剧</div>
+                </div>
+                <div class="category-card">
+                    <div class="category-icon">🇨🇳</div>
+                    <div class="category-name">国产剧</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Popular Content -->
+        <section class="container">
+            <h2 class="section-title">热门推荐</h2>
+            <div class="grid content-grid">
+                <!-- Card 1 -->
+                <article class="content-card">
+                    <div class="card-image">
+                        <img src="https://picsum.photos/seed/japan1/400/560" alt="樱花之恋">
+                        <div class="card-rating">9.8</div>
+                    </div>
+                    <div class="card-info">
+                        <h3 class="card-title">樱花之恋：京都物语</h3>
+                        <div class="card-meta">
+                            <span>日剧</span>
+                            <span>2023</span>
+                        </div>
+                        <div class="card-tags">
+                            <span>爱情</span>
+                            <span>治愈</span>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Card 2 -->
+                <article class="content-card">
+                    <div class="card-image">
+                        <img src="https://picsum.photos/seed/korea1/400/560" alt="首尔夜未眠">
+                        <div class="card-rating">9.5</div>
+                    </div>
+                    <div class="card-info">
+                        <h3 class="card-title">首尔夜未眠</h3>
+                        <div class="card-meta">
+                            <span>韩剧</span>
+                            <span>2023</span>
+                        </div>
+                        <div class="card-tags">
+                            <span>悬疑</span>
+                            <span>犯罪</span>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Card 3 -->
+                <article class="content-card">
+                    <div class="card-image">
+                        <img src="https://picsum.photos/seed/china1/400/560" alt="山海经传说">
+                        <div class="card-rating">9.2</div>
+                    </div>
+                    <div class="card-info">
+                        <h3 class="card-title">山海经传说</h3>
+                        <div class="card-meta">
+                            <span>国产剧</span>
+                            <span>古装</span>
+                        </div>
+                        <div class="card-tags">
+                            <span>神话</span>
+                            <span>冒险</span>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Card 4 -->
+                <article class="content-card">
+                    <div class="card-image">
+                        <img src="https://picsum.photos/seed/movie1/400/560" alt="功夫熊猫4">
+                        <div class="card-rating">8.9</div>
+                    </div>
+                    <div class="card-info">
+                        <h3 class="card-title">功夫熊猫4</h3>
+                        <div class="card-meta">
+                            <span>电影</span>
+                            <span>动画</span>
+                        </div>
+                        <div class="card-tags">
+                            <span>喜剧</span>
+                            <span>动作</span>
+                        </div>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+        <!-- Features -->
+        <section class="features">
+            <div class="container">
+                <div class="grid feature-grid">
+                    <div class="feature-item">
+                        <h3>高清画质</h3>
+                        <p>支持4K超清播放，为您呈现每一个细节。</p>
+                    </div>
+                    <div class="feature-item">
+                        <h3>海量资源</h3>
+                        <p>持续更新最新剧集，涵盖各类亚洲影视作品。</p>
+                    </div>
+                    <div class="feature-item">
+                        <h3>极速播放</h3>
+                        <p>智能节点加速，告别卡顿，流畅观看。</p>
+                    </div>
+                    <div class="feature-item">
+                        <h3>多端同步</h3>
+                        <p>手机、平板、电脑无缝切换，随时随地观看。</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-col">
+                    <h4>久久久久亚洲</h4>
+                    <p style="color: #666; font-size: 14px;">致力于为用户提供最优质的亚洲影视内容，打造专业的在线观影社区。</p>
+                </div>
+                <div class="footer-col">
+                    <h4>快速导航</h4>
+                    <ul>
+                        <li><a href="#">网站首页</a></li>
+                        <li><a href="#">最新更新</a></li>
+                        <li><a href="#">排行榜</a></li>
+                        <li><a href="#">帮助中心</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>版权声明</h4>
+                    <ul>
+                        <li><a href="#">用户协议</a></li>
+                        <li><a href="#">隐私政策</a></li>
+                        <li><a href="#">版权指引</a></li>
+                        <li><a href="#">免责声明</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>联系我们</h4>
+                    <ul>
+                        <li><a href="#">客服邮箱</a></li>
+                        <li><a href="#">合作洽谈</a></li>
+                        <li><a href="#">意见反馈</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>Copyright © 2023 久久久久亚洲. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>
