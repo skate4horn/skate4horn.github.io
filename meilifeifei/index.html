@@ -1,0 +1,741 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="魅力飞飞 - 魅力飞飞官方网站，提供最新魅力飞飞动态资讯、角色深度解析、游戏攻略技巧以及玩家社区交流平台。">
+    <meta name="keywords" content="魅力飞飞, 魅力飞飞官网, 魅力飞飞攻略, 魅力飞飞资讯, 魅力飞飞社区">
+    <title>魅力飞飞-魅力飞飞官方网站与玩家社区</title>
+    <script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+    <style>
+        :root {
+            --primary-color: #ff6b6b;
+            --secondary-color: #4ecdc4;
+            --dark-color: #2d3436;
+            --light-color: #f7f9fc;
+            --text-color: #636e72;
+            --white: #ffffff;
+            --shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            --radius: 12px;
+            --font-main: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: var(--font-main);
+            color: var(--text-color);
+            background-color: var(--light-color);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+            transition: color 0.3s ease;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        /* 布局容器 */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* 顶部导航 */
+        header {
+            background: var(--white);
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .nav-wrapper {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 70px;
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: 800;
+            color: var(--primary-color);
+            letter-spacing: 1px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .logo span {
+            color: var(--dark-color);
+        }
+
+        .nav-menu {
+            display: flex;
+            gap: 30px;
+        }
+
+        .nav-menu a {
+            font-weight: 500;
+            color: var(--dark-color);
+            font-size: 16px;
+            position: relative;
+        }
+
+        .nav-menu a:hover, .nav-menu a.active {
+            color: var(--primary-color);
+        }
+
+        .nav-menu a::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: -5px;
+            left: 0;
+            background-color: var(--primary-color);
+            transition: width 0.3s;
+        }
+
+        .nav-menu a:hover::after {
+            width: 100%;
+        }
+
+        .mobile-menu-btn {
+            display: none;
+            font-size: 24px;
+            cursor: pointer;
+        }
+
+        /* Hero 区域 */
+        .hero {
+            position: relative;
+            height: 500px;
+            background: linear-gradient(135deg, #fdfbfb 0%, #ebedee 100%);
+            display: flex;
+            align-items: center;
+            overflow: hidden;
+            margin-bottom: 40px;
+        }
+
+        .hero-content {
+            flex: 1;
+            padding-right: 50px;
+            z-index: 2;
+        }
+
+        .hero-tag {
+            display: inline-block;
+            background: rgba(255, 107, 107, 0.1);
+            color: var(--primary-color);
+            padding: 5px 12px;
+            border-radius: 20px;
+            font-size: 14px;
+            font-weight: 600;
+            margin-bottom: 20px;
+        }
+
+        .hero h1 {
+            font-size: 48px;
+            color: var(--dark-color);
+            margin-bottom: 20px;
+            line-height: 1.2;
+        }
+
+        .hero p {
+            font-size: 18px;
+            margin-bottom: 30px;
+            color: var(--text-color);
+            max-width: 600px;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 12px 30px;
+            border-radius: 30px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            border: none;
+        }
+
+        .btn-primary {
+            background-color: var(--primary-color);
+            color: var(--white);
+            box-shadow: 0 4px 15px rgba(255, 107, 107, 0.3);
+        }
+
+        .btn-primary:hover {
+            background-color: #ff5252;
+            transform: translateY(-2px);
+        }
+
+        .btn-outline {
+            background-color: transparent;
+            border: 2px solid var(--dark-color);
+            color: var(--dark-color);
+            margin-left: 15px;
+        }
+
+        .btn-outline:hover {
+            background-color: var(--dark-color);
+            color: var(--white);
+        }
+
+        .hero-image {
+            flex: 1;
+            display: flex;
+            justify-content: center;
+            position: relative;
+        }
+
+        .hero-image img {
+            max-width: 100%;
+            height: auto;
+            border-radius: var(--radius);
+            box-shadow: var(--shadow);
+            animation: float 6s ease-in-out infinite;
+        }
+
+        @keyframes float {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-20px); }
+            100% { transform: translateY(0px); }
+        }
+
+        /* 核心栏目 */
+        .section-title {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .section-title h2 {
+            font-size: 32px;
+            color: var(--dark-color);
+            margin-bottom: 10px;
+        }
+
+        .section-title p {
+            color: var(--text-color);
+        }
+
+        .section {
+            padding: 60px 0;
+        }
+
+        .card-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .card {
+            background: var(--white);
+            border-radius: var(--radius);
+            overflow: hidden;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow);
+        }
+
+        .card-img {
+            height: 200px;
+            background-color: #eee;
+            overflow: hidden;
+        }
+
+        .card-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+
+        .card:hover .card-img img {
+            transform: scale(1.05);
+        }
+
+        .card-body {
+            padding: 25px;
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .card-meta {
+            font-size: 12px;
+            color: #999;
+            margin-bottom: 10px;
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .card-title {
+            font-size: 20px;
+            font-weight: 700;
+            color: var(--dark-color);
+            margin-bottom: 15px;
+            line-height: 1.4;
+        }
+
+        .card-desc {
+            font-size: 14px;
+            color: var(--text-color);
+            margin-bottom: 20px;
+            flex: 1;
+        }
+
+        .card-footer {
+            margin-top: auto;
+            border-top: 1px solid #eee;
+            padding-top: 15px;
+        }
+
+        .card-link {
+            color: var(--primary-color);
+            font-weight: 600;
+            font-size: 14px;
+            display: inline-flex;
+            align-items: center;
+        }
+
+        .card-link:hover {
+            text-decoration: underline;
+        }
+
+        /* 特色功能区 */
+        .features {
+            background-color: var(--white);
+        }
+
+        .feature-item {
+            text-align: center;
+            padding: 30px;
+            border-radius: var(--radius);
+            background: var(--light-color);
+            transition: background 0.3s;
+        }
+
+        .feature-item:hover {
+            background: #eef2f7;
+        }
+
+        .feature-icon {
+            font-size: 40px;
+            margin-bottom: 20px;
+            color: var(--secondary-color);
+        }
+
+        .feature-item h3 {
+            font-size: 18px;
+            margin-bottom: 10px;
+            color: var(--dark-color);
+        }
+
+        .feature-item p {
+            font-size: 14px;
+            color: var(--text-color);
+        }
+
+        /* 问答/帮助区 */
+        .faq-section {
+            background-color: #f8f9fa;
+        }
+
+        .faq-item {
+            background: var(--white);
+            margin-bottom: 15px;
+            border-radius: 8px;
+            padding: 20px;
+            border-left: 4px solid var(--primary-color);
+            box-shadow: 0 2px 5px rgba(0,0,0,0.03);
+        }
+
+        .faq-question {
+            font-weight: 600;
+            font-size: 16px;
+            color: var(--dark-color);
+            margin-bottom: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .faq-answer {
+            font-size: 14px;
+            color: var(--text-color);
+        }
+
+        /* 页脚 */
+        footer {
+            background-color: var(--dark-color);
+            color: #b2bec3;
+            padding: 60px 0 20px;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .footer-col h4 {
+            color: var(--white);
+            font-size: 18px;
+            margin-bottom: 20px;
+        }
+
+        .footer-col ul li {
+            margin-bottom: 10px;
+        }
+
+        .footer-col ul li a:hover {
+            color: var(--primary-color);
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            font-size: 14px;
+        }
+
+        /* 响应式适配 */
+        @media (max-width: 768px) {
+            .nav-menu {
+                display: none;
+                position: absolute;
+                top: 70px;
+                left: 0;
+                width: 100%;
+                background: var(--white);
+                flex-direction: column;
+                padding: 20px;
+                box-shadow: 0 5px 10px rgba(0,0,0,0.1);
+            }
+
+            .nav-menu.active {
+                display: flex;
+            }
+
+            .mobile-menu-btn {
+                display: block;
+            }
+
+            .hero {
+                flex-direction: column-reverse;
+                height: auto;
+                padding: 60px 0;
+                text-align: center;
+            }
+
+            .hero-content {
+                padding-right: 0;
+                margin-top: 40px;
+            }
+
+            .hero h1 {
+                font-size: 32px;
+            }
+
+            .hero p {
+                margin: 0 auto 30px;
+            }
+
+            .btn {
+                width: 100%;
+                margin: 10px 0 0 0;
+            }
+
+            .hero-image {
+                margin-bottom: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- 顶部导航 -->
+    <header>
+        <div class="container nav-wrapper">
+            <a href="#" class="logo">
+                <span>魅力</span>飞飞
+            </a>
+            <nav>
+                <ul class="nav-menu" id="navMenu">
+                    <li><a href="#" class="active">首页</a></li>
+                    <li><a href="#news">最新资讯</a></li>
+                    <li><a href="#guide">新手攻略</a></li>
+                    <li><a href="#community">玩家社区</a></li>
+                    <li><a href="#about">关于我们</a></li>
+                </ul>
+            </nav>
+            <div class="mobile-menu-btn" onclick="toggleMenu()">☰</div>
+        </div>
+    </header>
+
+    <!-- 首屏 Hero -->
+    <section class="hero">
+        <div class="container" style="display: flex; align-items: center; width: 100%;">
+            <div class="hero-content">
+                <span class="hero-tag">全新版本 V2.0 上线</span>
+                <h1>探索魅力飞飞的奇幻世界</h1>
+                <p>在这里，每一次冒险都充满惊喜。加入我们，体验独特的社交玩法与沉浸式剧情，开启您的专属魅力旅程。</p>
+                <div>
+                    <button class="btn btn-primary">立即下载</button>
+                    <button class="btn btn-outline">观看演示</button>
+                </div>
+            </div>
+            <div class="hero-image">
+                <!-- 使用 picsum 作为占位图，模拟游戏宣传图 -->
+                <img src="https://picsum.photos/seed/magicfly/600/400" alt="魅力飞飞游戏场景">
+            </div>
+        </div>
+    </section>
+
+    <!-- 核心特色 -->
+    <section class="section features">
+        <div class="container">
+            <div class="card-grid">
+                <div class="feature-item">
+                    <div class="feature-icon">✨</div>
+                    <h3>沉浸式剧情</h3>
+                    <p>精心编写的世界观与分支剧情，您的选择将决定角色的命运与世界的走向。</p>
+                </div>
+                <div class="feature-item">
+                    <div class="feature-icon">🤝</div>
+                    <h3>实时社交互动</h3>
+                    <p>结识志同道合的伙伴，组建公会，在魅力飞飞中建立深厚的羁绊。</p>
+                </div>
+                <div class="feature-item">
+                    <div class="feature-icon">🎨</div>
+                    <h3>个性化定制</h3>
+                    <p>海量时装与外观道具，打造独一无二的专属角色形象。</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 最新资讯 -->
+    <section class="section" id="news">
+        <div class="container">
+            <div class="section-title">
+                <h2>最新动态</h2>
+                <p>掌握魅力飞飞的第一手资讯</p>
+            </div>
+            <div class="card-grid">
+                <article class="card">
+                    <div class="card-img">
+                        <img src="https://picsum.photos/seed/news1/400/250" alt="游戏更新公告">
+                    </div>
+                    <div class="card-body">
+                        <div class="card-meta">
+                            <span>2023-10-24</span>
+                            <span>更新</span>
+                        </div>
+                        <h3 class="card-title">V2.0版本“星河纪元”更新公告</h3>
+                        <p class="card-desc">全新副本、角色平衡性调整及节日活动上线，快来体验全新的冒险内容！</p>
+                        <div class="card-footer">
+                            <a href="#" class="card-link">阅读全文 &rarr;</a>
+                        </div>
+                    </div>
+                </article>
+                <article class="card">
+                    <div class="card-img">
+                        <img src="https://picsum.photos/seed/news2/400/250" alt="玩家活动">
+                    </div>
+                    <div class="card-body">
+                        <div class="card-meta">
+                            <span>2023-10-22</span>
+                            <span>活动</span>
+                        </div>
+                        <h3 class="card-title">秋季绘卷活动开启</h3>
+                        <p class="card-desc">参与活动赢取限定称号与稀有道具，用画笔记录你在魅力飞飞的点滴回忆。</p>
+                        <div class="card-footer">
+                            <a href="#" class="card-link">查看详情 &rarr;</a>
+                        </div>
+                    </div>
+                </article>
+                <article class="card">
+                    <div class="card-img">
+                        <img src="https://picsum.photos/seed/news3/400/250" alt="公会战">
+                    </div>
+                    <div class="card-body">
+                        <div class="card-meta">
+                            <span>2023-10-20</span>
+                            <span>赛事</span>
+                        </div>
+                        <h3 class="card-title">全服公会战决赛预告</h3>
+                        <p class="card-desc">巅峰对决即将开始，查看决赛对阵名单及观赛指南，为你的公会加油助威。</p>
+                        <div class="card-footer">
+                            <a href="#" class="card-link">了解更多 &rarr;</a>
+                        </div>
+                    </div>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <!-- 新手攻略 -->
+    <section class="section" id="guide" style="background-color: var(--white);">
+        <div class="container">
+            <div class="section-title">
+                <h2>新手指南</h2>
+                <p>从入门到精通的实用技巧</p>
+            </div>
+            <div class="card-grid">
+                <article class="card">
+                    <div class="card-img">
+                        <img src="https://picsum.photos/seed/guide1/400/250" alt="职业选择">
+                    </div>
+                    <div class="card-body">
+                        <h3 class="card-title">魅力飞飞职业选择全解析</h3>
+                        <p class="card-desc">深入分析战士、法师、游侠三大职业的优劣势，助你找到最适合自己的战斗风格。</p>
+                        <div class="card-footer">
+                            <a href="#" class="card-link">开始攻略 &rarr;</a>
+                        </div>
+                    </div>
+                </article>
+                <article class="card">
+                    <div class="card-img">
+                        <img src="https://picsum.photos/seed/guide2/400/250" alt="升级路线">
+                    </div>
+                    <div class="card-body">
+                        <h3 class="card-title">快速升级路线推荐</h3>
+                        <p class="card-desc">掌握高效挂机与任务接取技巧，在短时间内快速提升角色等级，抢占先机。</p>
+                        <div class="card-footer">
+                            <a href="#" class="card-link">查看路线 &rarr;</a>
+                        </div>
+                    </div>
+                </article>
+                <article class="card">
+                    <div class="card-img">
+                        <img src="https://picsum.photos/seed/guide3/400/250" alt="装备搭配">
+                    </div>
+                    <div class="card-body">
+                        <h3 class="card-title">高阶装备搭配与强化</h3>
+                        <p class="card-desc">解析装备词条属性，提供最优的强化方案，让你的战力瞬间提升一个台阶。</p>
+                        <div class="card-footer">
+                            <a href="#" class="card-link">学习搭配 &rarr;</a>
+                        </div>
+                    </div>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <!-- 常见问题 FAQ -->
+    <section class="section faq-section">
+        <div class="container">
+            <div class="section-title">
+                <h2>常见问题</h2>
+                <p>解答您关于魅力飞飞的疑问</p>
+            </div>
+            <div style="max-width: 800px; margin: 0 auto;">
+                <div class="faq-item">
+                    <div class="faq-question">魅力飞飞支持哪些平台？</div>
+                    <div class="faq-answer">目前魅力飞飞支持Windows PC端及主流移动端设备（iOS与Android），所有平台数据互通。</div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">游戏是否免费游玩？</div>
+                    <div class="faq-answer">是的，魅力飞飞是一款免费下载、免费游玩的MMORPG游戏，包含内购商城，不影响游戏平衡。</div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">如何加入官方社区？</div>
+                    <div class="faq-answer">您可以通过官网底部的联系方式或扫描二维码关注我们的官方微信公众号与Discord群组。</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 页脚 -->
+    <footer id="about">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <a href="#" class="logo" style="margin-bottom: 20px; display: inline-block;">
+                        <span>魅力</span>飞飞
+                    </a>
+                    <p style="font-size: 14px; line-height: 1.8;">
+                        魅力飞飞致力于为玩家打造最纯粹、最有趣的在线社交游戏体验。我们坚持公平竞技，拒绝数值压力。
+                    </p>
+                </div>
+                <div class="footer-col">
+                    <h4>快速链接</h4>
+                    <ul>
+                        <li><a href="#">首页</a></li>
+                        <li><a href="#">游戏下载</a></li>
+                        <li><a href="#">玩家论坛</a></li>
+                        <li><a href="#">客服中心</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>支持</h4>
+                    <ul>
+                        <li><a href="#">新手帮助</a></li>
+                        <li><a href="#">游戏规则</a></li>
+                        <li><a href="#">隐私政策</a></li>
+                        <li><a href="#">联系我们</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>关注我们</h4>
+                    <ul>
+                        <li><a href="#">官方微博</a></li>
+                        <li><a href="#">微信公众号</a></li>
+                        <li><a href="#">Bilibili官方账号</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2023 魅力飞飞官方网站. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // 简单的移动端菜单切换逻辑
+        function toggleMenu() {
+            var menu = document.getElementById('navMenu');
+            menu.classList.toggle('active');
+        }
+
+        // 简单的平滑滚动效果
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                var targetId = this.getAttribute('href');
+                if (targetId === '#') return;
+                
+                var targetElement = document.querySelector(targetId);
+                if (targetElement) {
+                    // 关闭移动端菜单
+                    document.getElementById('navMenu').classList.remove('active');
+                    
+                    targetElement.scrollIntoView({
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+    </script>
+</body>
+                          </html>
